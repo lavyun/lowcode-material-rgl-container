@@ -1,0 +1,14 @@
+.react-grid-item-RichRglSimpleSteps {
+  & > .react-grid-item-scroll > .react-grid-item-content-wrap {
+    height: 100%;
+  }
+
+  .rich-rgl-simple-steps {
+    height: 100%;
+    background-color: #FFF;
+
+    .rich-rgl-simple-steps-content {
+      overflow-y: auto;
+    }
+  }
+}

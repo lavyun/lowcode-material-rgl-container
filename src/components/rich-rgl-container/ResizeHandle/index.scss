@@ -1,0 +1,82 @@
+@use 'sass:math';
+
+.is-export-mode .my-resize-handle {
+  display: none;
+}
+
+.react-grid-layout .react-grid-item > .my-resize-handle {
+  $handle-width: 6px;
+  $handle-height: 12px;
+  $handle-inner-width: 6px;
+  $margin-offset: math.div(-$handle-width, 2);
+  // 加上选中时的 border-width
+  $absolute-offset: math.div(-$handle-width + 2, 2);
+  $padding-size: math.div($handle-width, 2);
+
+  width: $handle-width;
+  height: $handle-width;
+  background-image: none;
+  padding: 0;
+  box-sizing: content-box;
+
+  &::after {
+    display: none;
+  }
+
+  & > .my-resize-handle-inner {
+    width: $handle-width;
+    height: $handle-width;
+    background-color: #0089ff;
+    border-radius: $handle-width;
+  }
+
+  &[handleaxis="s"] {
+    bottom: $absolute-offset;
+    left: 50%;
+    margin-left: $margin-offset;
+    cursor: ns-resize;
+    padding: 0 $padding-size;
+  }
+  &[handleaxis="w"] {
+    left: $absolute-offset;
+    top: 50%;
+    margin-top: $margin-offset;
+    cursor: ew-resize;
+    padding: $padding-size 0;
+  }
+  &[handleaxis="e"] {
+    right: $absolute-offset;
+    top: 50%;
+    margin-top: $margin-offset;
+    cursor: ew-resize;
+    padding: $padding-size 0;
+  }
+  &[handleaxis="n"] {
+    top: $absolute-offset;
+    left: 50%;
+    margin-left: $margin-offset;
+    cursor: ns-resize;
+    padding: 0 $padding-size;
+  }
+  &[handleaxis="sw"] {
+    left: $absolute-offset;
+    bottom: $absolute-offset;
+    cursor: nesw-resize;
+  }
+  &[handleaxis="nw"] {
+    left: $absolute-offset;
+    top: $absolute-offset;
+    cursor: nwse-resize;
+  }
+  &[handleaxis="se"] {
+    right: $absolute-offset;
+    bottom: $absolute-offset;
+    cursor: nwse-resize;
+  }
+  &[handleaxis="ne"] {
+    right: $absolute-offset;
+    top: $absolute-offset;
+    cursor: nesw-resize
+  }
+}
+
