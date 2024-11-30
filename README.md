@@ -1,18 +1,4 @@
-# wallet-lowcode-components
+## 不可开箱即用，请自行参考使用
 
-一个面向PC的大包业务组件库
-
-## 调试
-启动调试
-
-```
-npm start             # 打开开发环境，运行所有组件
-npm start <compName>  # 打开开发环境，运行特定组件(更快)
-```
-
-构建
-
-```
-npm run build
-```
-
+效果：
+![20241130-183344](https://github.com/user-attachments/assets/9da21582-9b4f-4006-b184-000f02fa2729)
